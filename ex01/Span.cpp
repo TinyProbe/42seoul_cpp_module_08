@@ -6,11 +6,12 @@
 /*   By: tkong <tkong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 22:02:32 by tkong             #+#    #+#             */
-/*   Updated: 2023/02/18 22:59:44 by tkong            ###   ########.fr       */
+/*   Updated: 2023/02/28 13:58:54 by tkong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
+#include <limits>
 
 Span::Span() : N() {}
 Span::Span(const Span& rhs) : N() { *this = rhs; }
@@ -40,23 +41,29 @@ void Span::addNumbers(int n, int amount) {
 		std::cout << e.what() << '\n';
 	}
 }
-int Span::shortestSpan() const {
+size_t Span::shortestSpan() const {
 	if ((int) this->v.size() < 2) {
 		throw std::runtime_error("Can't enough amount of element such a compare");
 	}
-	int rtn = 1e9;
+	size_t rtn = UINT_MAX;
 	for (int i = 1; i < (int) this->v.size(); ++i) {
-		rtn = std::min(rtn, std::abs(this->v[i - 1] - this->v[i]));
+		int sign = (v[i - 1] < 0 == v[i] < 0 ? -1 : 1);
+		size_t tmp = std::max(std::abs(this->v[i - 1]), std::abs(this->v[i]));
+		tmp += sign * std::min(std::abs(this->v[i - 1]), std::abs(this->v[i]));
+		rtn = std::min(rtn, tmp);
 	}
 	return rtn;
 }
-int Span::longestSpan() const {
+size_t Span::longestSpan() const {
 	if ((int) this->v.size() < 2) {
 		throw std::runtime_error("Can't enough amount of element such a compare");
 	}
-	int rtn = 0;
+	size_t rtn = 0;
 	for (int i = 1; i < (int) this->v.size(); ++i) {
-		rtn = std::max(rtn, std::abs(this->v[i - 1] - this->v[i]));
+		int sign = (v[i - 1] < 0 == v[i] < 0 ? -1 : 1);
+		size_t tmp = std::max(std::abs(this->v[i - 1]), std::abs(this->v[i]));
+		tmp += sign * std::min(std::abs(this->v[i - 1]), std::abs(this->v[i]));
+		rtn = std::max(rtn, tmp);
 	}
 	return rtn;
 }

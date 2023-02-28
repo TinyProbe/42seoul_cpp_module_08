@@ -25,26 +25,26 @@ MutantStack<T>::operator std::stack<T>() const {
 }
 
 template <class T>
-typename MutantStack<T>::iterator               MutantStack<T>::begin()         _NOEXCEPT {return this->c.begin();}
+typename MutantStack<T>::iterator               MutantStack<T>::begin()         {return this->c.begin();}
 template <class T>
-typename MutantStack<T>::const_iterator         MutantStack<T>::begin()   const _NOEXCEPT {return this->c.begin();}
+typename MutantStack<T>::const_iterator         MutantStack<T>::begin()   const {return this->c.begin();}
 template <class T>
-typename MutantStack<T>::iterator               MutantStack<T>::end()           _NOEXCEPT {return this->c.end();}
+typename MutantStack<T>::iterator               MutantStack<T>::end()           {return this->c.end();}
 template <class T>
-typename MutantStack<T>::const_iterator         MutantStack<T>::end()     const _NOEXCEPT {return this->c.end();}
+typename MutantStack<T>::const_iterator         MutantStack<T>::end()     const {return this->c.end();}
 template <class T>
-typename MutantStack<T>::reverse_iterator       MutantStack<T>::rbegin()        _NOEXCEPT {return this->c.reverse_iterator(this->c.end());}
+typename MutantStack<T>::reverse_iterator       MutantStack<T>::rbegin()        {return this->c.reverse_iterator(this->c.end());}
 template <class T>
-typename MutantStack<T>::const_reverse_iterator MutantStack<T>::rbegin()  const _NOEXCEPT {return this->c.const_reverse_iterator(this->c.end());}
+typename MutantStack<T>::const_reverse_iterator MutantStack<T>::rbegin()  const {return this->c.const_reverse_iterator(this->c.end());}
 template <class T>
-typename MutantStack<T>::reverse_iterator       MutantStack<T>::rend()          _NOEXCEPT {return this->c.reverse_iterator(this->c.begin());}
+typename MutantStack<T>::reverse_iterator       MutantStack<T>::rend()          {return this->c.reverse_iterator(this->c.begin());}
 template <class T>
-typename MutantStack<T>::const_reverse_iterator MutantStack<T>::rend()    const _NOEXCEPT {return this->c.const_reverse_iterator(this->c.begin());}
+typename MutantStack<T>::const_reverse_iterator MutantStack<T>::rend()    const {return this->c.const_reverse_iterator(this->c.begin());}
 template <class T>
-typename MutantStack<T>::const_iterator         MutantStack<T>::cbegin()  const _NOEXCEPT {return this->c.begin();}
+typename MutantStack<T>::const_iterator         MutantStack<T>::cbegin()  const {return this->c.begin();}
 template <class T>
-typename MutantStack<T>::const_iterator         MutantStack<T>::cend()    const _NOEXCEPT {return this->c.end();}
+typename MutantStack<T>::const_iterator         MutantStack<T>::cend()    const {return this->c.end();}
 template <class T>
-typename MutantStack<T>::const_reverse_iterator MutantStack<T>::crbegin() const _NOEXCEPT {return this->c.rbegin();}
+typename MutantStack<T>::const_reverse_iterator MutantStack<T>::crbegin() const {return this->c.rbegin();}
 template <class T>
-typename MutantStack<T>::const_reverse_iterator MutantStack<T>::crend()   const _NOEXCEPT {return this->c.rend();}
+typename MutantStack<T>::const_reverse_iterator MutantStack<T>::crend()   const {return this->c.rend();}

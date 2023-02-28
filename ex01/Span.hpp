@@ -30,8 +30,8 @@ public:
 
 	virtual void addNumber(int n);
 	virtual void addNumbers(int n, int amount);
-	virtual int shortestSpan() const;
-	virtual int longestSpan() const;
+	virtual size_t shortestSpan() const;
+	virtual size_t longestSpan() const;
 
 };
 

@@ -6,7 +6,7 @@
 /*   By: tkong <tkong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 23:04:10 by tkong             #+#    #+#             */
-/*   Updated: 2023/02/19 06:25:37 by tkong            ###   ########.fr       */
+/*   Updated: 2023/02/28 14:11:58 by tkong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,18 +43,18 @@ public:
 	virtual ~MutantStack();
 	virtual operator std::stack<T>() const;
 
-	iterator               begin()         _NOEXCEPT;
-	const_iterator         begin()   const _NOEXCEPT;
-	iterator               end()           _NOEXCEPT;
-	const_iterator         end()     const _NOEXCEPT;
-	reverse_iterator       rbegin()        _NOEXCEPT;
-	const_reverse_iterator rbegin()  const _NOEXCEPT;
-	reverse_iterator       rend()          _NOEXCEPT;
-	const_reverse_iterator rend()    const _NOEXCEPT;
-	const_iterator         cbegin()  const _NOEXCEPT;
-	const_iterator         cend()    const _NOEXCEPT;
-	const_reverse_iterator crbegin() const _NOEXCEPT;
-	const_reverse_iterator crend()   const _NOEXCEPT;
+	iterator               begin()        ;
+	const_iterator         begin()   const;
+	iterator               end()          ;
+	const_iterator         end()     const;
+	reverse_iterator       rbegin()       ;
+	const_reverse_iterator rbegin()  const;
+	reverse_iterator       rend()         ;
+	const_reverse_iterator rend()    const;
+	const_iterator         cbegin()  const;
+	const_iterator         cend()    const;
+	const_reverse_iterator crbegin() const;
+	const_reverse_iterator crend()   const;
 
 };
 
