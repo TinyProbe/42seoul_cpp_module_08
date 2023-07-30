@@ -6,7 +6,7 @@
 /*   By: tkong <tkong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 23:04:10 by tkong             #+#    #+#             */
-/*   Updated: 2023/07/30 14:39:06 by tkong            ###   ########.fr       */
+/*   Updated: 2023/07/30 15:16:13 by tkong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,15 @@
 
 #include <stack>
 #include <vector>
+#include <list>
 
 template <class T>
 class MutantStack : public std::stack<T, std::vector<T> > {
 
 public:
 	typedef typename MutantStack::container_type			container_type;
-	typedef typename container_type::__self					__self;
 	typedef typename container_type::value_type				value_type;
 	typedef typename container_type::allocator_type			allocator_type;
-	typedef typename container_type::__alloc_traits			__alloc_traits;
 	typedef typename container_type::reference				reference;
 	typedef typename container_type::const_reference		const_reference;
 	typedef typename container_type::size_type				size_type;
