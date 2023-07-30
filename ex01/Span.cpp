@@ -6,7 +6,7 @@
 /*   By: tkong <tkong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 22:02:32 by tkong             #+#    #+#             */
-/*   Updated: 2023/07/30 14:33:27 by tkong            ###   ########.fr       */
+/*   Updated: 2023/07/30 15:08:06 by tkong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 size_t Span::findSpan(bool isLong) const {
 	if (v.size() < 2) {
-		throw std::runtime_error("Can't enough amount of element such a compare");
+		throw std::runtime_error("Not enough elements");
 	}
 	size_t rtn = (isLong ? 0 : UINT_MAX);
 	for (size_t i=1; i<v.size(); ++i) {
@@ -40,13 +40,13 @@ Span &Span::operator=(const Span &rhs) {
 
 void Span::addNumber(long n) {
 	if (v.size()+1 > N) {
-		throw std::runtime_error("There is no place add something anymore");
+		throw std::runtime_error("No more space");
 	}
 	v.push_back(n);
 }
 void Span::addNumbers(std::vector<long>::iterator b, std::vector<long>::iterator e) {
 	if (v.size()+(e-b) > N) {
-		throw std::runtime_error("There is no place add something anymore");
+		throw std::runtime_error("No more space");
 	}
 	v.insert(v.end(), b, e);
 }

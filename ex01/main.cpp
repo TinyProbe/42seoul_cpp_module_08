@@ -6,18 +6,18 @@
 /*   By: tkong <tkong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 22:02:31 by tkong             #+#    #+#             */
-/*   Updated: 2023/07/30 14:35:43 by tkong            ###   ########.fr       */
+/*   Updated: 2023/07/30 15:04:10 by tkong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
 #include <iostream>
 
-#define MAX_LEN 1000
+#define MAX_LEN 10000
 
 int main()
 {
-	Span sp(5);
+	Span sp = Span(5);
 	sp.addNumber(-30);
 	sp.addNumber(30);
 	sp.addNumber(5);
