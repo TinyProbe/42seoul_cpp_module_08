@@ -6,7 +6,7 @@
 /*   By: tkong <tkong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 23:04:09 by tkong             #+#    #+#             */
-/*   Updated: 2023/02/19 06:14:57 by tkong            ###   ########.fr       */
+/*   Updated: 2023/07/30 14:54:14 by tkong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,36 +15,35 @@
 
 int main()
 {
-	MutantStack<int> mstack;
-	mstack.push(5);
-	mstack.push(17);
-	std::cout << mstack.top() << std::endl;
-	mstack.pop();
-	std::cout << "size: " << mstack.size() << std::endl;
-	mstack.push(3);
-	mstack.push(5);
-	mstack.push(737);
-	for (int i = 0; i < 1000; ++i) {
-		mstack.push(i);
-	}
-	std::cout << "size: " << mstack.size() << std::endl;
-	for (int i = 0; i < 990; ++i) {
-		mstack.pop();
-	}
-	std::cout << "size: " << mstack.size() << std::endl;
-	mstack.push(0);
-	MutantStack<int>::iterator it = mstack.begin();
-	MutantStack<int>::iterator ite = mstack.end();
+	MutantStack<int> muts;
+	muts.push(5);
+	muts.push(17);
+	std::cout << muts.top() << std::endl;
+	muts.pop();
+	std::cout << "size: " << muts.size() << std::endl;
+	muts.push(3);
+	muts.push(5);
+	muts.push(737);
+	for (int i=0; i<1000; ++i) { muts.push(i); }
+	std::cout << "size: " << muts.size() << std::endl;
+	for (int i=0; i<990; ++i) { muts.pop(); }
+	std::cout << "size: " << muts.size() << std::endl;
+	muts.push(0);
+	MutantStack<int>::iterator it = muts.begin();
+	MutantStack<int>::iterator it2 = muts.end();
 	++it;
 	--it;
-	while (it != ite) {
-		std::cout << *it << std::endl;
+	std::cout << "muts: ";
+	while (it != it2) {
+		std::cout << *it << ' ';
 		++it;
 	}
-	std::stack<int> s(mstack);
-	std::cout << "s:\n";
+	std::cout << '\n';
+	std::stack<int> s(muts);
+	std::cout << "s:    ";
 	while (!s.empty()) {
-		std::cout << s.top() << '\n';
+		std::cout << s.top() << ' ';
 		s.pop();
 	}
+	std::cout << '\n';
 }

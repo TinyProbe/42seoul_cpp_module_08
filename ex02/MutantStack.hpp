@@ -6,7 +6,7 @@
 /*   By: tkong <tkong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 23:04:10 by tkong             #+#    #+#             */
-/*   Updated: 2023/02/28 14:11:58 by tkong            ###   ########.fr       */
+/*   Updated: 2023/07/30 14:39:06 by tkong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ public:
 
 public:
 	MutantStack();
-	MutantStack(const MutantStack& rhs);
+	MutantStack(const MutantStack &rhs);
 	virtual ~MutantStack();
 	virtual operator std::stack<T>() const;
 

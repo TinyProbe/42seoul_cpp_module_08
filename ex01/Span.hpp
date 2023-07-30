@@ -6,7 +6,7 @@
 /*   By: tkong <tkong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 22:02:32 by tkong             #+#    #+#             */
-/*   Updated: 2023/02/28 16:11:54 by tkong            ###   ########.fr       */
+/*   Updated: 2023/07/30 14:33:27 by tkong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,28 @@
 #ifndef SPAN_HPP
 #define SPAN_HPP
 
-#include <iostream>
 #include <vector>
 
 class Span {
 	const size_t N;
-	std::vector<int> v;
+	std::vector<long> v;
 
+private:
 	virtual size_t findSpan(bool isLong) const;
 
 public:
 	Span();
-	Span(const Span& rhs);
+	Span(const Span &rhs);
 	Span(size_t N);
 	virtual ~Span();
-	virtual Span& operator=(const Span& rhs);
+	virtual Span &operator=(const Span &rhs);
 
-	virtual void addNumber(int n);
-	virtual void addNumbers(std::vector<int>::iterator b, std::vector<int>::iterator e);
+	virtual void addNumber(long n);
+	virtual void addNumbers(std::vector<long>::iterator b, std::vector<long>::iterator e);
 	virtual size_t shortestSpan() const;
 	virtual size_t longestSpan() const;
-	virtual std::vector<int>::iterator begin();
-	virtual std::vector<int>::iterator end();
+	virtual std::vector<long>::iterator begin();
+	virtual std::vector<long>::iterator end();
 
 };
 
