@@ -12,13 +12,16 @@
 
 template <class T>
 MutantStack<T>::MutantStack() : std::stack<T, container_type >() {}
-
 template <class T>
 MutantStack<T>::MutantStack(const MutantStack &rhs) : std::stack<T, container_type >(rhs) {}
-
 template <class T>
 MutantStack<T>::~MutantStack() {}
-
+template <class T>
+MutantStack<T> &MutantStack<T>::operator=(const MutantStack &rhs) {
+	if (this == &rhs) { return *this; }
+	dynamic_cast<std::stack<T, std::vector<T> > &>(*this) = dynamic_cast<const std::stack<T, std::vector<T> > &>(rhs);
+	return *this;
+}
 template <class T>
 MutantStack<T>::operator std::stack<T>() const {
 	return std::stack<T>(std::deque<T>(this->c.begin(), this->c.end()));

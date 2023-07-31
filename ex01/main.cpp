@@ -6,7 +6,7 @@
 /*   By: tkong <tkong@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 22:02:31 by tkong             #+#    #+#             */
-/*   Updated: 2023/07/30 15:04:10 by tkong            ###   ########.fr       */
+/*   Updated: 2023/07/31 09:48:54 by tkong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int main()
 
 	try {
 		sp.addNumber(30);
-	} catch (const std::exception& e) {
+	} catch (const std::exception &e) {
 		std::cout << e.what() << '\n';
 	}
 
